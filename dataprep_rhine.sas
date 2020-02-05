@@ -50,7 +50,7 @@
 					termstr   = CRLF
 					firstobs  = 2
 					dlm       = ";"
-					end        = done_reading
+					end       = done_reading
 				;
 
 				input
@@ -92,6 +92,6 @@
 
 %create_rhine_data
 (
-	in_CSVs = &path./data_src/Rhine-water-levels
-,	out_SAS = &path./data
+	in_CSVs = &path./data_stg0/Rhine-water-levels
+,	out_SAS = &path./data_stg1
 );

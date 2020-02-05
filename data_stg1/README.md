@@ -1,4 +1,4 @@
-## data
+## data_stg1
 
 ### Overview
 
@@ -19,15 +19,15 @@
 
 <!-- * File -->
 <td align="left">
-<code><a target="_blank" rel="noopener noreferrer" href="https://github.com/j-honnacker/data-viz-SAS/blob/master/data/ames.sas7bdat">
+<code><a target="_blank" rel="noopener noreferrer" href="https://github.com/j-honnacker/data-viz-SAS/blob/master/data_stg1/ames.sas7bdat">
 ames.sas7bdat
 </a></code>
 </td>
 
 <!-- * Source Files -->
 <td align="left">
-<code><a target="_blank" rel="noopener noreferrer" href="https://github.com/j-honnacker/data-viz-SAS/blob/master/data_src/AmesHousing.csv">
-/data_src/AmesHousing.csv
+<code><a target="_blank" rel="noopener noreferrer" href="https://github.com/j-honnacker/data-viz-SAS/blob/master/data_stg0/AmesHousing.csv">
+/data_stg0/AmesHousing.csv
 </a></code>
 </td>
 
@@ -46,15 +46,15 @@ ames.sas7bdat
 
 <!-- * File -->
 <td align="left">
-<code><a target="_blank" rel="noopener noreferrer" href="https://github.com/j-honnacker/data-viz-SAS/blob/master/data/rhine_wl_1996_2018.sas7bdat">
+<code><a target="_blank" rel="noopener noreferrer" href="https://github.com/j-honnacker/data-viz-SAS/blob/master/data_stg1/rhine_wl_1996_2018.sas7bdat">
 rhine_wl_1996_2018.sas7bdat
 </a></code>
 </td>
 
 <!-- * Source Files -->
 <td align="left">
-<code><a target="_blank" rel="noopener noreferrer" href="https://github.com/j-honnacker/data-viz-SAS/blob/master/data_src/Rhine-water-levels/">
-/data_src/Rhine-water-levels/
+<code><a target="_blank" rel="noopener noreferrer" href="https://github.com/j-honnacker/data-viz-SAS/blob/master/data_stg0/Rhine-water-levels/">
+/data_stg0/Rhine-water-levels/
 </a></code>
 </td>
 

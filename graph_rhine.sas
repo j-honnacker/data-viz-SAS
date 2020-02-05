@@ -3,7 +3,7 @@
 %let path = /sas/homes/data-viz-sas;
 %let path = /folders/myfolders/data-viz-SAS;
 
-libname data "&path./data";
+libname data "&path./data_stg1";
 
 
 /* Read and enrich data set

@@ -1,7 +1,7 @@
 
 %let path = /sas/homes/data-viz-SAS;
 %let path = /folders/myfolders/data-viz-SAS;
-libname data "&path./data";
+libname d_stg1 "&path./data_stg1";
 
 /******************************************************************************/
 /* (1) Read Data
@@ -77,8 +77,8 @@ libname data "&path./data";
 %mend;
 
 %ames_my_import(
-	input_file_desc = &path./data_src/AmesHousing-desc.xlsx
-,	input_file      = &path./data_src/AmesHousing.csv
+	input_file_desc = &path./data_stg0/AmesHousing-desc.xlsx
+,	input_file      = &path./data_stg0/AmesHousing.csv
 ,	output_sas      = ames
 );
 
@@ -109,7 +109,7 @@ run;
 
 proc copy
 	in  = work
-	out = data
+	out = d_stg1
 ;
 	select ames;
 run;
@@ -122,7 +122,7 @@ run;
 %macro proc_import_approach;
 
 	proc import
-		datafile     = "&path./data_src/AmesHousing.csv"
+		datafile     = "&path./data_stg0/AmesHousing.csv"
 		out          = ames_csv
 		dbms         = csv
 	;
@@ -130,7 +130,7 @@ run;
 	run;
 
 	proc import
-		datafile     = "&path./data_src/AmesHousing.xls"
+		datafile     = "&path./data_stg0/AmesHousing.xls"
 		out          = ames_xls
 		dbms         = xls
 	;
