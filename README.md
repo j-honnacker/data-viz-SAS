@@ -56,3 +56,9 @@ contains <strong>data files</strong> created from the data files in <code><a tar
 </tbody>
 
 </table>
+
+### Files
+
+#### <a target="_blank" rel="noopener noreferrer" href='https://github.com/j-honnacker/data-viz-SAS/tree/master/dataviz_stg2_ames_townhouses_ODS_basics.sas'>`dataviz_stg2_ames_townhouses_ODS_basics.sas`</a>
+
+<img src="https://github.com/j-honnacker/data-viz-SAS/blob/README/viz_stg2_ames_townhouses_ODS_basics_scatter.png" alt="Scatter Plot with Prediction Ellipse" width="600"/>
