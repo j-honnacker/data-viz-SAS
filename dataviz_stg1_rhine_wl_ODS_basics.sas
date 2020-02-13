@@ -56,7 +56,7 @@ proc sgplot
 	vbar
 		year
 	/	response = water_level
-		stat     = sum
+		stat     = mean
 	;
 
 run;
@@ -81,7 +81,7 @@ proc sgpanel
 		quarter
 	/	group    = quarter
 		response = water_level
-		stat     = sum
+		stat     = mean
 		nostatlabel
 	;
 
@@ -95,7 +95,7 @@ proc sgpanel
 run;
 
 
-/* Create BAR CHARTS for the WHOLE THING by MONTH
+/* Create BOX PLOTS for the WHOLE THING by MONTH
 */
 proc sgplot
 	data = rhine_wl_1996_2018
@@ -106,4 +106,3 @@ proc sgplot
 	;
 
 run;
-
