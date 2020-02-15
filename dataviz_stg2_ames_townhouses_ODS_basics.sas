@@ -61,3 +61,21 @@ proc sgplot
 	;
 run;
 
+
+
+/* Box Plots, grouped  -------------------------------------------------------*/
+
+%let var_y     = SalePrice;
+%let var_x     = Yr_Sold;
+%let var_group = House_Style;
+
+proc sgplot
+	data = d_stg2.ames_townhouses
+;
+   vbox
+		&var_y.
+	/
+		category = &var_x.
+		group    = &var_group.
+	;
+run;
