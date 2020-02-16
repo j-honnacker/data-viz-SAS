@@ -79,3 +79,27 @@ proc sgplot
 		group    = &var_group.
 	;
 run;
+
+
+
+/* Bar Chart, grouped  -------------------------------------------------------*/
+
+%let var_y     = SalePrice;
+%let var_x     = Full_Bathrooms;
+%let var_group = Fireplaces;
+
+proc sgplot
+	data = d_stg2.ames_townhouses
+;
+
+	vbar	
+		&var_x.
+	/
+		response = &var_y.
+		stat     = mean
+
+		group        = &var_group.
+		groupdisplay = cluster
+	;
+run;
+
