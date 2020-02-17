@@ -103,3 +103,29 @@ proc sgplot
 	;
 run;
 
+
+
+/* Histograms Overlay (incl. density estimates)  -----------------------------*/
+
+%let var_x     = SalePrice;
+%let var_group = House_Style;
+
+proc sgplot
+	data = d_stg2.ames_townhouses
+;
+
+	histogram
+		&var_x.
+	/
+		group        = &var_group.
+		transparency = 0.6
+	;
+
+	density
+		&var_x.
+	/
+		group        = &var_group.
+		type         = kernel
+	;
+
+run;
