@@ -14,6 +14,35 @@
 
 <tbody>
 
+
+<!-- AmesHousing-desc.xlsx --> 
+<tr>
+
+<!-- * File -->
+<td align="left">
+<code><a target="_blank" rel="noopener noreferrer" href='https://github.com/j-honnacker/data-viz-sas/blob/master/data_stg0/AmesHousing-desc.xlsx'>
+AmesHousing&#8209;desc.xlsx
+</a></code>
+</td>
+
+<!-- * Source -->
+<td align="left">
+
+</a>
+</td>
+
+<!-- * Note -->
+<td align="left">
+Column specifications for
+<code><a target="_blank" rel="noopener noreferrer" href='https://github.com/j-honnacker/data-viz-sas/blob/master/data_stg0/AmesHousing.csv'>
+AmesHousing.csv
+</a></code>
+</td>
+
+</tr>
+
+
+
 <!-- AmesHousing-doc.txt --> 
 <tr>
 
