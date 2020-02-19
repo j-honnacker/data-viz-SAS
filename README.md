@@ -72,6 +72,33 @@ contains <strong>data files</strong> created from the data files in <code><a tar
 
 <tbody>
 
+<!-- dataviz files -->
+<tr>
+
+<td align="left">
+<b>dataviz</b>_&ltstg&gt_&ltname&gt.sas
+</td>
+
+<td align="left">
+create visualizations
+</td>
+
+</tr>
+
+
+<!-- dataprep files -->
+<tr>
+
+<td align="left">
+<b>dataprep</b>_&ltstg&gt_&ltname&gt.sas
+</td>
+
+<td align="left">
+prepare the data for the visualizations
+</td>
+
+</tr>
+
 
 <!-- dataprep_stg1_rhine_wl.sas -->
 <tr>
