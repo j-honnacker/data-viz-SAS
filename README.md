@@ -86,6 +86,23 @@ create visualizations
 </tr>
 
 
+<!-- dataviz_stg2_ames_townhouses_ODS_basics.sas -->
+<tr>
+
+<td align="left">
+<code><a target="_blank" rel="noopener noreferrer" href="https://github.com/j-honnacker/data-viz-SAS/blob/master/dataviz_stg2_ames_townhouses_ODS_basics.sas">
+dataviz_stg2_ames_townhouses_ODS_basics.sas
+</a></code>
+</td>
+
+<td align="left">
+creates plots and charts from the townhouse data using ODS procedures <a href="#dataviz_stg2_ames_townhouses_ODS_basics">Details</a>
+</td>
+
+</tr>
+
+
+
 <!-- dataprep files -->
 <tr>
 
@@ -95,6 +112,22 @@ create visualizations
 
 <td align="left">
 prepare the data for the visualizations
+</td>
+
+</tr>
+
+
+<!-- dataprep_stg1_ames.sas -->
+<tr>
+
+<td align="left">
+<code><a target="_blank" rel="noopener noreferrer" href="https://github.com/j-honnacker/data-viz-SAS/blob/master/dataprep_stg1_ames.sas">
+dataprep_stg1_ames.sas
+</a></code>
+</td>
+
+<td align="left">
+removes outliers as recommended by the data provider
 </td>
 
 </tr>
@@ -115,6 +148,22 @@ reshapes 23 yearly CSV files and concatenates the results into a single SAS data
 
 </tr>
 
+
+<!-- dataprep_stg2_ames_townhouses.sas -->
+<tr>
+
+<td align="left">
+<code><a target="_blank" rel="noopener noreferrer" href="https://github.com/j-honnacker/data-viz-SAS/blob/master/dataprep_stg2_ames_townhouses.sas">
+dataprep_stg2_ames_townhouses.sas
+</a></code>
+</td>
+
+<td align="left">
+creates a subset that only contains townhouse data
+</td>
+
+</tr>
+
 </tbody>
 
 </table>
@@ -122,7 +171,7 @@ reshapes 23 yearly CSV files and concatenates the results into a single SAS data
 
 <!-- Details: dataviz_stg2_ames_townhouses.sas --> 
 
-#### <a target="_blank" rel="noopener noreferrer" href='https://github.com/j-honnacker/data-viz-SAS/tree/master/dataviz_stg2_ames_townhouses_ODS_basics.sas'>`dataviz_stg2_ames_townhouses_ODS_basics.sas`</a>
+#### <a id='dataviz_stg2_ames_townhouses_ODS_basics' target="_blank" rel="noopener noreferrer" href='https://github.com/j-honnacker/data-viz-SAS/tree/master/dataviz_stg2_ames_townhouses_ODS_basics.sas'>`dataviz_stg2_ames_townhouses_ODS_basics.sas`</a>
 
 <img src="https://github.com/j-honnacker/data-viz-SAS/blob/README/viz_stg2_ames_townhouses_ODS_basics_scatter.png" alt="Scatter Plot with Prediction Ellipse" width="280"/><img src="https://github.com/j-honnacker/data-viz-SAS/blob/README/viz_stg2_ames_townhouses_ODS_basics_box.png" alt="Box Plots, grouped" width="280"/><img src="https://github.com/j-honnacker/data-viz-SAS/blob/README/viz_stg2_ames_townhouses_ODS_basics_bar.png" alt="Bar Plot, grouped" width="280"/><img src="https://github.com/j-honnacker/data-viz-SAS/blob/README/viz_stg2_ames_townhouses_ODS_basics_histogram.png" alt="Histograms, overlayed" width="280"/>
 
