@@ -6,6 +6,7 @@
 libname data "&path./data_stg1";
 
 
+
 /* Read and enrich data set
 */
 data rhine_wl_1996_2018;
@@ -21,6 +22,7 @@ data rhine_wl_1996_2018;
 run;
 
 
+
 /* Set (ODS) graphics settings
 */
 ods
@@ -29,14 +31,19 @@ ods
 ;
 
 
-/* Plot the WHOLE THING as a LINE CHART
-*/
+
+/* LINE CHART  ---------------------------------------------------------------*/
+
+%let var_x = date;
+%let var_y = water_level;
+
+
 proc sgplot
 	data = rhine_wl_1996_2018
 ;
 	series
-		x = date
-		y = water_level
+		x = &var_x.
+		y = &var_y.
 	;
 	format
 		date date11.
@@ -47,28 +54,39 @@ proc sgplot
 run;
 
 
-/* Create a BAR CHART of the WHOLE THING by YEAR
-*/
+
+/* Yearly BAR CHARTS  --------------------------------------------------------*/
+
+%let var_x = year;
+%let var_y = water_level;
+
+
 proc sgplot
 	data = rhine_wl_1996_2018
 ;
 
 	vbar
-		year
-	/	response = water_level
+		&var_x.
+	/	response = &var_y.
 		stat     = mean
 	;
 
 run;
 
 
-/* QUARTERLY BAR CHARTS for EACH YEAR between 1996 and 2000
-*/
+
+/* Quarterly BAR CHARTS for each year between 1996 and 2000 ------------------*/
+
+%let var_x1 = year;
+%let var_x2 = quarter;
+%let var_y  = water_level;
+
+
 proc sgpanel
 	data = rhine_wl_1996_2018( where=(1996 <= year <= 2000) )
 ;
 	panelby
-		year
+		&var_x1.
 	/	layout      = columnlattice
 		onepanel
 		colheaderpos = bottom
@@ -78,9 +96,9 @@ proc sgpanel
 	;
 
 	vbar
-		quarter
+		&var_x2.
 	/	group    = quarter
-		response = water_level
+		response = &var_y.
 		stat     = mean
 		nostatlabel
 	;
@@ -95,14 +113,21 @@ proc sgpanel
 run;
 
 
-/* Create BOX PLOTS for the WHOLE THING by MONTH
-*/
+
+/* BOX PLOTS by month  -------------------------------------------------------*/
+
+%let var_x = month;
+%let var_y = water_level;
+
+
 proc sgplot
 	data = rhine_wl_1996_2018
 ;
 	vbox
-		water_level
-	/	category = month
+		&var_y.
+	/	category = &var_x.
 	;
 
 run;
+
+
