@@ -96,7 +96,7 @@ dataviz_stg1_rhine_wl_ODS_basics.sas
 </td>
 
 <td align="left">
-creates plots and charts from the water level data of the Rhine using ODS (Statistical Graphics) procedures
+creates plots and charts from the water level data of the Rhine using ODS (Statistical Graphics) procedures <a href="#dataviz_stg1_rhine_wl_ODS_basics">Details</a>
 </td>
 
 </tr>
@@ -183,6 +183,15 @@ creates a subset that only contains townhouse data
 </tbody>
 
 </table>
+
+
+
+<!-- Details: dataviz_stg1_rhine_wl_ODS_basics --> 
+
+#### <a id='dataviz_stg1_rhine_wl_ODS_basics' target="_blank" rel="noopener noreferrer" href='https://github.com/j-honnacker/data-viz-SAS/tree/master/dataviz_stg2_ames_townhouses_ODS_basics.sas'>`dataviz_stg1_rhine_wl_ODS_basics.sas`</a>
+
+<img src="https://github.com/j-honnacker/data-viz-SAS/blob/README/viz_stg1_rhine_moving_average.png" alt="Scatter Plot with Moving Averages" width="560"/>
+
 
 
 <!-- Details: dataviz_stg2_ames_townhouses.sas --> 
