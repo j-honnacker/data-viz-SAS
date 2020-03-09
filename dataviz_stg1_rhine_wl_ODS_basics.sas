@@ -27,7 +27,8 @@ run;
 */
 ods
 	graphics on
-	/	width=32cm height=16cm
+/
+	antialiasmax = 8500
 ;
 
 
@@ -52,6 +53,128 @@ proc sgplot
 	*refline '1jan97'd / axis=x;
 	*refline '1jan98'd / axis=x;
 run;
+
+
+
+/* Moving averages  ----------------------------------------------------------*/
+
+
+/* (1) Calculate moving averages
+*/
+proc expand
+    data = rhine_wl_1996_2018
+    out  = rhine_wl_1996_2018_ma
+    method = none
+;
+    id
+		date
+	;
+    convert
+		water_level = water_level_50days
+	/
+		transout = ( movave    50   /* Calculate 50 days moving average */
+		             trimleft  49 ) /* ...except for the fist 49 days   */
+	;
+    convert
+		water_level = water_level_200days
+	/
+		transout = ( movave   200   /* Calculate 200 days moving average */
+		             trimleft 199 ) /* ...except for the first 199 days  */
+	;
+
+run;
+
+
+/* (2) Plot pre-processed data
+*/
+%let var_x  = date;
+%let var_y1 = water_level;
+%let var_y2 = water_level_50days;
+%let var_y3 = water_level_200days;
+
+
+/* Set width and height */
+ods
+	graphics on
+/
+	width  = 28cm
+	height = 16cm
+;
+
+
+/* Create (2a) scatter plot based on &var_y1.
+          (2b) blue line plot based on &var_y2.
+          (2c) red line plot based on &vart_y3. */
+proc sgplot
+	data = rhine_wl_1996_2018_ma
+;
+
+	/* (2a) */
+	scatter
+		x = &var_x.
+		y = &var_y1.
+	/
+		markerattrs  = ( symbol = CircleFilled
+		                 size   = 5pt
+		                 color  = lightgray
+		               )
+		transparency = .6
+	;
+
+	/* (2b) */
+	series
+		x = &var_x.
+		y = &var_y2.
+	/
+		name         = "50d"
+		legendlabel  = "50-Day Moving Average"
+		lineattrs    = ( color     = blue
+		                 thickness = 3
+		               )
+		transparency = .4
+	;
+
+	/* (2c) */
+	series
+		x = &var_x.
+		y = &var_y3.
+	/
+		name         = "200d"
+		legendlabel  = "200-Day Moving Average"
+		lineattrs    = ( color     = red
+		                 thickness = 3
+		               )
+		transparency = .4
+	;
+
+	title
+		"Daily Water Levels of the Rhine Near Duesseldorf, Germany"
+	;
+	xaxis
+		label = "Date"
+	;
+	yaxis
+		label = "Water Level in cm"
+	;
+	keylegend
+		"50d"
+		"200d"
+	/
+		across = 1
+	;
+
+run;
+
+
+/* Reset title and ODS settings */
+title;
+
+ods
+	graphics on
+/
+	reset  = width
+	         height
+;
 
 
 
@@ -130,76 +253,3 @@ proc sgplot
 
 run;
 
-
-
-/* Moving averages  ----------------------------------------------------------*/
-
-
-/* Pre-processing
-*/
-proc expand
-    data = rhine_wl_1996_2018
-    out  = rhine_wl_1996_2018_ma
-    method = none
-;
-    id date;
-    convert
-		water_level = water_level_100days
-	/
-		transout = ( movave   100   /* Calculate 10 days moving average */
-		             trimleft  99 ) /* ...except for the fist 9 days    */
-	;
-    convert
-		water_level = water_level_200days
-	/
-		transout = ( movave   200   /* Calculate 30 days moving average */
-		             trimleft 199 ) /* ...except for the first 29 days  */
-	;
-
-run;
-
-
-/* Plot pre-processed data
-*/
-%let var_x  = date;
-%let var_y1 = water_level;
-%let var_y2 = water_level_100days;
-%let var_y3 = water_level_200days;
-
-
-proc sgplot
-	data = rhine_wl_1996_2018_ma
-;
-
-	scatter
-		x = &var_x.
-		y = &var_y1.
-	/
-		legendlabel     = "water level"
-		markerattrs     = ( symbol = CircleFilled
-		                    size   = 2pt
-		                  )
-		markerfillattrs = ( color = black )
-	;
-	series
-		x = &var_x.
-		y = &var_y2.
-	/
-		legendlabel  = "100 days moving average"
-		lineattrs    = ( color     = blue
-		                 thickness = 3
-		               )
-		transparency = .5
-	;
-	series
-		x = &var_x.
-		y = &var_y3.
-	/
-		legendlabel  = "200 days moving average"
-		lineattrs    = ( color     = orange
-		                 thickness = 3
-		               )
-		transparency = .5
-	;
-
-run;
