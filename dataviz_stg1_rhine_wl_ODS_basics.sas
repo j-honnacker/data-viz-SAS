@@ -131,3 +131,75 @@ proc sgplot
 run;
 
 
+
+/* Moving averages  ----------------------------------------------------------*/
+
+
+/* Pre-processing
+*/
+proc expand
+    data = rhine_wl_1996_2018
+    out  = rhine_wl_1996_2018_ma
+    method = none
+;
+    id date;
+    convert
+		water_level = water_level_100days
+	/
+		transout = ( movave   100   /* Calculate 10 days moving average */
+		             trimleft  99 ) /* ...except for the fist 9 days    */
+	;
+    convert
+		water_level = water_level_200days
+	/
+		transout = ( movave   200   /* Calculate 30 days moving average */
+		             trimleft 199 ) /* ...except for the first 29 days  */
+	;
+
+run;
+
+
+/* Plot pre-processed data
+*/
+%let var_x  = date;
+%let var_y1 = water_level;
+%let var_y2 = water_level_100days;
+%let var_y3 = water_level_200days;
+
+
+proc sgplot
+	data = rhine_wl_1996_2018_ma
+;
+
+	scatter
+		x = &var_x.
+		y = &var_y1.
+	/
+		legendlabel     = "water level"
+		markerattrs     = ( symbol = CircleFilled
+		                    size   = 2pt
+		                  )
+		markerfillattrs = ( color = black )
+	;
+	series
+		x = &var_x.
+		y = &var_y2.
+	/
+		legendlabel  = "100 days moving average"
+		lineattrs    = ( color     = blue
+		                 thickness = 3
+		               )
+		transparency = .5
+	;
+	series
+		x = &var_x.
+		y = &var_y3.
+	/
+		legendlabel  = "200 days moving average"
+		lineattrs    = ( color     = orange
+		                 thickness = 3
+		               )
+		transparency = .5
+	;
+
+run;
