@@ -188,7 +188,7 @@ creates a subset that only contains townhouse data
 
 <!-- Details: dataviz_stg1_rhine_wl_ODS_basics --> 
 
-#### <a id='dataviz_stg1_rhine_wl_ODS_basics' target="_blank" rel="noopener noreferrer" href='https://github.com/j-honnacker/data-viz-SAS/tree/master/dataviz_stg2_ames_townhouses_ODS_basics.sas'>`dataviz_stg1_rhine_wl_ODS_basics.sas`</a>
+#### <a id='dataviz_stg1_rhine_wl_ODS_basics' target="_blank" rel="noopener noreferrer" href='https://github.com/j-honnacker/data-viz-SAS/blob/master/dataviz_stg1_rhine_wl_ODS_basics.sas'>`dataviz_stg1_rhine_wl_ODS_basics.sas`</a>
 
 <img src="https://github.com/j-honnacker/data-viz-SAS/blob/README/viz_stg1_rhine_moving_average.png" alt="Scatter Plot with Moving Averages" width="560"/>
 
